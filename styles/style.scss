@@ -48,5 +48,6 @@ body {
 footer {
     @include flexCenter();
     @include size(20vh);
+    flex-direction: column;
     border-top:3px dashed $secondary;
 }

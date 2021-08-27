@@ -56,6 +56,10 @@ footer {
           justify-content: center;
   width: 100%;
   height: 20vh;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   border-top: 3px dashed #8FDA81;
 }
 /*# sourceMappingURL=style.css.map */
