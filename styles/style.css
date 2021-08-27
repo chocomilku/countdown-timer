@@ -13,7 +13,7 @@ body {
   background: #cc81da;
   background: -webkit-gradient(linear, left bottom, left top, from(#cc81da), color-stop(50%, #9f81da), to(#818fda));
   background: linear-gradient(0deg, #cc81da 0%, #9f81da 50%, #818fda 100%);
-  color: black;
+  color: white;
 }
 
 .container {
