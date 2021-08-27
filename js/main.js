@@ -14,9 +14,9 @@ function run() {
     const difference = target.getTime() - now
 
     let day = Math.floor(difference / (1000 * 60 * 60 *24))
-    let hour = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
-    let minute = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60))
-    let second = Math.floor((difference % (1000 * 60)) / (1000))
+    let hour = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})
+    let minute = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})
+    let second = Math.floor((difference % (1000 * 60)) / (1000)).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})
 
     spanDay.innerText = day
     spanHour.innerText = hour
