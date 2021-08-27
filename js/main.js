@@ -1,9 +1,9 @@
 const timer = document.querySelector('.timer');
 const description = document.querySelector('.description');
-const spanDay = document.querySelector('.day')
-const spanHour = document.querySelector('.hour')
-const spanMinute = document.querySelector('.minute')
-const spanSecond = document.querySelector('.second')
+const spanDay = new CountUp('.day', 0, 0, 0, 1, { useEasing: true, useGrouping: true, separator: "", decimal: "."})
+const spanHour = new CountUp('.hour', 0, 0, 0, .5, { useEasing: true, useGrouping: true, separator: "", decimal: "."})
+const spanMinute = new CountUp('.minute', 0, 0, 0, .5, { useEasing: true, useGrouping: true, separator: "", decimal: "."})
+const spanSecond = new CountUp('.second', 0, 0, 0, .5, { useEasing: true, useGrouping: true, separator: "", decimal: "."})
 
 let countTo = 'Sep 1, 2021 00:00:00';
 
@@ -18,10 +18,10 @@ function run() {
     let minute = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})
     let second = Math.floor((difference % (1000 * 60)) / (1000)).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})
 
-    spanDay.innerText = day
-    spanHour.innerText = hour
-    spanMinute.innerText = minute
-    spanSecond.innerText = second
+    spanDay.update(day)
+    spanHour.update(hour)
+    spanMinute.update(minute)
+    spanSecond.update(second)
     description.innerHTML = `Time until ${countString}`
 }
 
