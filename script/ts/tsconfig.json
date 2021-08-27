@@ -1,0 +1,7 @@
+{
+    "compilerOptions": {
+        "target": "ES6",
+        "watch": true,
+        "outFile": "../js/main.js"
+    }
+}
