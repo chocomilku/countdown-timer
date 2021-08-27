@@ -1,11 +1,9 @@
-import { CountUp } from './countUp.js'
-
 const timer = document.querySelector('.timer');
 const description = document.querySelector('.description');
-const spanDay = new CountUp('day', 0, 0, 0, 1, { useEasing: true, useGrouping: true, separator: "", decimal: ".", suffix: "d"})
-const spanHour = new CountUp('hour', 0, 0, 0, 1, { useEasing: true, useGrouping: true, separator: "", decimal: ".", suffix: "h"})
-const spanMinute = new CountUp('minute', 0, 0, 0, 1, { useEasing: true, useGrouping: true, separator: "", decimal: ".", suffix: "m"})
-const spanSecond = new CountUp('second', 0, 0, 0, 1, { useEasing: true, useGrouping: true, separator: "", decimal: ".", suffix: "s"})
+const spanDay = document.querySelector('.day')
+const spanHour = document.querySelector('.hour')
+const spanMinute = document.querySelector('.minute')
+const spanSecond = document.querySelector('.second')
 
 let countTo = 'Sep 1, 2021 00:00:00';
 
@@ -16,14 +14,14 @@ function run() {
     const difference = target.getTime() - now
 
     let day = Math.floor(difference / (1000 * 60 * 60 *24))
-    let hour = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
-    let minute = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60))
-    let second = Math.floor((difference % (1000 * 60)) / (1000))
+    let hour = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})
+    let minute = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})
+    let second = Math.floor((difference % (1000 * 60)) / (1000)).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})
 
-    spanDay.update(day)
-    spanHour.update(hour)
-    spanMinute.update(minute)
-    spanSecond.update(second)
+    spanDay.innerText = day
+    spanHour.innerText = hour
+    spanMinute.innerText = minute
+    spanSecond.innerText = second
     description.innerHTML = `Time until ${countString}`
 }
 
