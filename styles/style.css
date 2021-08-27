@@ -36,7 +36,7 @@ body {
 
 .description {
   font-weight: 200;
-  font-size: clamp(0.5rem, 3.15vw, 2.5rem);
+  font-size: clamp(1.25rem, 3.15vw, 2rem);
 }
 
 .timer {
