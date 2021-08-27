@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>countdown-timer | counts until the specific time</title>
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/odometer-theme-minimal.css">
 </head>
 <body>
     <div class="container">
@@ -14,12 +15,16 @@
             <span>{date}</span>
         </div>
         <div class="timer">
-            420 days
+            <span class="day odometer"></span>
+            <span class="hour odometer"></span>
+            <span class="minute odometer"></span>
+            <span class="second odometer"></span>
         </div>
     </div>
     <footer>
         footer here
     </footer>
-    <script src="main.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/odometer.min.js"></script>
 </body>
 </html>
