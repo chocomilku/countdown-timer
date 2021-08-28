@@ -24,6 +24,7 @@ body {
     font-family: 'Inter', sans-serif;
     text-align: center;
     font-weight: 400;
+    font-variant-numeric: tabular-nums;
     background: rgb(204,129,218);
     background: linear-gradient(0deg, rgba(204,129,218,1) 0%, rgba(159,129,218,1) 50%, rgba(129,143,218,1) 100%); 
     color: $primary;
