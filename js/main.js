@@ -42,7 +42,7 @@ function run() {
         spanSecond.innerHTML = second + 's'
     }
 
-    description.innerHTML = `Time until ${countString}`
+    description.innerHTML = `Counts until ${countString}`
 }
 
 setInterval(run, 1000)
