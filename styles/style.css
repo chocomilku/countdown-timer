@@ -62,4 +62,13 @@ footer {
           flex-direction: column;
   border-top: 3px dashed #8FDA81;
 }
+
+a {
+  color: white;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: #8FDA81;
+}
 /*# sourceMappingURL=style.css.map */

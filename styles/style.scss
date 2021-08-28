@@ -51,3 +51,12 @@ footer {
     flex-direction: column;
     border-top:3px dashed $secondary;
 }
+
+a {
+    color: $primary;
+    text-decoration: underline;
+}
+
+a:hover {
+    color:$secondary;
+}
