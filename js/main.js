@@ -9,13 +9,17 @@ function run() {
     const now = new Date().getTime();
     const difference = target.getTime() - now
 
-    let day = Math.floor(difference / (1000 * 60 * 60 *24)).toLocaleString('en-us', {minimumIntegerDigits: 2, useGrouping:false})
-    let hour = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toLocaleString('en-us', {minimumIntegerDigits: 2, useGrouping:false})
-    let minute = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)).toLocaleString('en-us', {minimumIntegerDigits: 2, useGrouping:false})
-    let second = Math.floor((difference % (1000 * 60)) / (1000)).toLocaleString('en-us', {minimumIntegerDigits: 2, useGrouping:false})
+    let day = Math.floor(difference / (1000 * 60 * 60 *24)).toLocaleString('en-us', {minimumIntegerDigits: 2, useGrouping:false}).replace('-', '');
+    let hour = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toLocaleString('en-us', {minimumIntegerDigits: 2, useGrouping:false}).replace('-', '');
+    let minute = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)).toLocaleString('en-us', {minimumIntegerDigits: 2, useGrouping:false}).replace('-', '');
+    let second = Math.floor((difference % (1000 * 60)) / (1000)).toLocaleString('en-us', {minimumIntegerDigits: 2, useGrouping:false}).replace('-', '');
 
-    timer.innerHTML = `${day}d ${hour}h ${minute}m ${second}s`
-
+    if (difference < 0) {
+        timer.innerHTML = `+ ${day}d ${hour}h ${minute}m ${second}s`
+    } else {
+        timer.innerHTML = `- ${day}d ${hour}h ${minute}m ${second}s`
+    }
+    
     description.innerHTML = `Counts until ${countString}`
 }
 
