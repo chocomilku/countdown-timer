@@ -10,19 +10,27 @@ function run() {
     const countString = target.toLocaleString();
     const now = new Date().getTime();
     const difference = target.getTime() - now
+    let day;
+    let hour;
+    let minute;
+    let second;
+
+    function time(formula) {
+        return Math.floor(formula).toLocaleString('en-us', {minimumIntegerDigits: 2, useGrouping:false}).replace('-', '');
+    }
 
     if (difference < 0) {
-        day = Math.floor((difference/(1000*60*60*24))+1).toLocaleString('en-us', {minimumIntegerDigits: 2, useGrouping:false}).replace('-', '');
-        hour = Math.floor(((difference/(1000*60*60)) % 24)+1).toLocaleString('en-us', {minimumIntegerDigits: 2, useGrouping:false}).replace('-', '');
-        minute = Math.floor(((difference/1000/60) % 60)+1).toLocaleString('en-us', {minimumIntegerDigits: 2, useGrouping:false}).replace('-', '');
-        second = Math.floor(((difference/1000) % 60)).toLocaleString('en-us', {minimumIntegerDigits: 2, useGrouping:false}).replace('-', '');
+        day = time((difference/(1000*60*60*24))+1);
+        hour = time(((difference/(1000*60*60)) % 24)+1);
+        minute = time(((difference/1000/60) % 60)+1);
+        second = time(((difference/1000) % 60));
         timer.innerHTML = `+ ${day}d ${hour}h ${minute}m ${second}s`
         description.innerHTML = `Counts from ${countString}`
     } else {
-        day = Math.floor(difference/(1000*60*60*24)).toLocaleString('en-us', {minimumIntegerDigits: 2, useGrouping:false}).replace('-', '');
-        hour = Math.floor((difference/(1000*60*60)) % 24).toLocaleString('en-us', {minimumIntegerDigits: 2, useGrouping:false}).replace('-', '');
-        minute = Math.floor((difference/1000/60) % 60).toLocaleString('en-us', {minimumIntegerDigits: 2, useGrouping:false}).replace('-', '');
-        second = Math.floor((difference/1000) % 60).toLocaleString('en-us', {minimumIntegerDigits: 2, useGrouping:false}).replace('-', '');
+        day = time((difference/(1000*60*60*24)));
+        hour = time(((difference/(1000*60*60)) % 24));
+        minute = time(((difference/1000/60) % 60));
+        second = time(((difference/1000) % 60));
         timer.innerHTML = `- ${day}d ${hour}h ${minute}m ${second}s`
         description.innerHTML = `Counts until ${countString}`
     }
