@@ -11,18 +11,21 @@ function run() {
     const now = new Date().getTime();
     const difference = target.getTime() - now
 
-    let day = Math.floor(difference / (1000 * 60 * 60 *24)).toLocaleString('en-us', {minimumIntegerDigits: 2, useGrouping:false}).replace('-', '');
-    let hour = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toLocaleString('en-us', {minimumIntegerDigits: 2, useGrouping:false}).replace('-', '');
-    let minute = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)).toLocaleString('en-us', {minimumIntegerDigits: 2, useGrouping:false}).replace('-', '');
-    let second = Math.floor((difference % (1000 * 60)) / (1000)).toLocaleString('en-us', {minimumIntegerDigits: 2, useGrouping:false}).replace('-', '');
-
     if (difference < 0) {
+        day = Math.floor((difference/(1000*60*60*24))+1).toLocaleString('en-us', {minimumIntegerDigits: 2, useGrouping:false}).replace('-', '');
+        hour = Math.floor(((difference/(1000*60*60)) % 24)+1).toLocaleString('en-us', {minimumIntegerDigits: 2, useGrouping:false}).replace('-', '');
+        minute = Math.floor(((difference/1000/60) % 60)+1).toLocaleString('en-us', {minimumIntegerDigits: 2, useGrouping:false}).replace('-', '');
+        second = Math.floor(((difference/1000) % 60)).toLocaleString('en-us', {minimumIntegerDigits: 2, useGrouping:false}).replace('-', '');
         timer.innerHTML = `+ ${day}d ${hour}h ${minute}m ${second}s`
+        description.innerHTML = `Counts from ${countString}`
     } else {
+        day = Math.floor(difference/(1000*60*60*24)).toLocaleString('en-us', {minimumIntegerDigits: 2, useGrouping:false}).replace('-', '');
+        hour = Math.floor((difference/(1000*60*60)) % 24).toLocaleString('en-us', {minimumIntegerDigits: 2, useGrouping:false}).replace('-', '');
+        minute = Math.floor((difference/1000/60) % 60).toLocaleString('en-us', {minimumIntegerDigits: 2, useGrouping:false}).replace('-', '');
+        second = Math.floor((difference/1000) % 60).toLocaleString('en-us', {minimumIntegerDigits: 2, useGrouping:false}).replace('-', '');
         timer.innerHTML = `- ${day}d ${hour}h ${minute}m ${second}s`
+        description.innerHTML = `Counts until ${countString}`
     }
-    
-    description.innerHTML = `Counts until ${countString}`
 }
 
 function buttonClick() {
