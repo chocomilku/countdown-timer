@@ -84,6 +84,8 @@ form {
       -ms-flex-align: center;
           align-items: center;
   gap: 0.5vw;
+  -webkit-transform: translateY(75%);
+          transform: translateY(75%);
 }
 
 form input[type=date], form input[type=time] {
