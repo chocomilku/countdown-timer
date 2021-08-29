@@ -26,16 +26,16 @@ function run() {
 }
 
 function buttonClick() {
-    if (getComputedStyle(options).opacity == 1) {
+    if (getComputedStyle(options).opacity == 0) {
+        options.style.visibility = "visible"
+        options.style.opacity = "1"
+        button.innerHTML = "Hide Options"
+    } else {
         options.style.opacity = "0"
         setTimeout(function(){
             options.style.visibility = "hidden"
         }, 500)
         button.innerHTML = "Show Options"
-    } else {
-        options.style.visibility = "visible"
-        options.style.opacity = "1"
-        button.innerHTML = "Hide Options"
     }
 }
 
