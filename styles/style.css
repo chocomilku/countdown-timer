@@ -75,6 +75,8 @@ a:hover {
 }
 
 form {
+  -webkit-transition: all 500ms ease;
+  transition: all 500ms ease;
   font-weight: 200;
   font-size: clamp(0.75rem, 1.75vw, 1rem);
   display: -webkit-box;
@@ -108,7 +110,7 @@ button {
   margin: 0.5rem;
   border: none;
   border-radius: 5px;
-  width: 5rem;
+  width: 5.5rem;
 }
 
 button:hover {

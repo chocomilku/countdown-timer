@@ -1,5 +1,7 @@
 const timer = document.querySelector('.timer');
 const description = document.querySelector('.description');
+const options = document.querySelector('.changeDateTime')
+const button = document.querySelector('.button')
 
 let countTo = 'Sep 1, 2021 00:00:00';
 
@@ -21,6 +23,16 @@ function run() {
     }
     
     description.innerHTML = `Counts until ${countString}`
+}
+
+function buttonClick() {
+    if (getComputedStyle(options).opacity == 1) {
+        options.style.opacity = "0"
+        button.innerHTML = "Show Options"
+    } else {
+        options.style.opacity = "1"
+        button.innerHTML = "Hide Options"
+    }
 }
 
 setInterval(run, 1000)
