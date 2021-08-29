@@ -1,6 +1,6 @@
 const timer = document.querySelector('.timer');
 const description = document.querySelector('.description');
-const options = document.querySelector('.changeDateTime')
+const options = document.querySelector('.form')
 const button = document.querySelector('.button')
 
 let countTo = 'Sep 1, 2021 00:00:00';
@@ -37,6 +37,15 @@ function buttonClick() {
         }, 500)
         button.innerHTML = "Show Options"
     }
+}
+
+function enter(){
+    let tempDate;
+    let tempTime;
+    tempDate = options[0].value
+    tempTime = options[1].value
+    countTo = `${tempDate} ${tempTime}`
+    buttonClick()
 }
 
 setInterval(run, 1000)
