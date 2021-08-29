@@ -21,10 +21,12 @@ $secondary: #8FDA81;
 }
 
 body {
-    font-family: 'Inter', sans-serif;
+    font: {
+        family: 'Inter', sans-serif;
+        weight: 400;
+        variant-numeric: tabular-nums;
+    }
     text-align: center;
-    font-weight: 400;
-    font-variant-numeric: tabular-nums;
     background: rgb(204,129,218);
     background: linear-gradient(0deg, rgba(204,129,218,1) 0%, rgba(159,129,218,1) 50%, rgba(129,143,218,1) 100%); 
     color: $primary;
@@ -37,13 +39,17 @@ body {
 }
 
 .description {
-    font-weight:200;
-    font-size: clamp(1.25rem, 3.15vw, 2rem);
+    font: {
+        weight: 200;
+        size: clamp(1.25rem, 3.15vw, 2rem);
+    }
 }
 
 .timer {
-    font-weight: 500;
-    font-size: clamp(3rem, 7vw, 5rem);
+    font: {
+        weight: 500;
+        size: clamp(3rem, 7vw, 5rem);
+    }
 }
 
 footer {
@@ -57,8 +63,7 @@ footer {
 a {
     color: $primary;
     text-decoration: underline;
-}
-
-a:hover {
-    color:$secondary;
+    &:hover {
+        color:$secondary;
+    }
 }
