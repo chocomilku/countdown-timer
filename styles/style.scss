@@ -84,8 +84,20 @@ form {
         border: none;
         border-radius: 5px;
         height:1rem;
+        width: 3rem;
     }
     input[type=submit]:hover {
+        background: $secondary;
+        color:$primary;
+    }
+}
+
+button {
+    margin: 0.5rem;
+    border: none;
+    border-radius: 5px;
+    width:5rem;
+    &:hover {
         background: $secondary;
         color:$primary;
     }
