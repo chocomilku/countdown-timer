@@ -67,3 +67,23 @@ a {
         color:$secondary;
     }
 }
+
+form {
+    font-weight: 200;
+    font-size: clamp(0.75rem, 1.75vw, 1rem);
+    display: flex;
+    align-items: center;
+    gap:0.5vw;
+    input[type=date], input[type=time] {
+        outline: none;
+    }
+    input[type=submit] {
+        border: none;
+        border-radius: 5px;
+        height:1rem;
+    }
+    input[type=submit]:hover {
+        background: $secondary;
+        color:$primary;
+    }
+}

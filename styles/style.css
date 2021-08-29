@@ -73,4 +73,31 @@ a {
 a:hover {
   color: #8FDA81;
 }
+
+form {
+  font-weight: 200;
+  font-size: clamp(0.75rem, 1.75vw, 1rem);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.5vw;
+}
+
+form input[type=date], form input[type=time] {
+  outline: none;
+}
+
+form input[type=submit] {
+  border: none;
+  border-radius: 5px;
+  height: 1rem;
+}
+
+form input[type=submit]:hover {
+  background: #8FDA81;
+  color: white;
+}
 /*# sourceMappingURL=style.css.map */
